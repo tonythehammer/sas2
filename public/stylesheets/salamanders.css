@@ -1,0 +1,43 @@
+
+html {
+  background-color: #8A9A5B;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-image: url(../../images/salmander.jpg);
+  background-size: cover;
+  margin: auto;
+  padding: 1rem;
+  width: 80%;
+  height: 1000px;
+}
+
+p {
+  color: #fff;
+}
+
+h1 a {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+table, th, td {
+  border: 1px double black;
+}
+
+th {
+  color: #fff;
+}
+
+td {
+ color: aqua;
+ background-color: black;
+ opacity: .5;
+}
+
+table a {
+  text-decoration: none;
+  color:aquamarine;
+}
