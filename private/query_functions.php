@@ -30,10 +30,10 @@ function update_salamander($salamander) {
     }
 
     $sql = "UPDATE salamander SET ";
-    $sql .= "name='" .  $salamander['name'] . "', ";
-    $sql .= "habitat='" .  $salamander['habitat'] . "',";
-    $sql .= "description='" .  $salamander['description'] . "' ";
-    $sql .= "WHERE id='" . $salamander['id'] . "' ";
+    $sql .= "name='" .  db_escape($db,$salamander['name']) . "', ";
+    $sql .= "habitat='" .  db_escape($db,$salamander['habitat']) . "',";
+    $sql .= "description='" .  db_escape($db,$salamander['description']) . "' ";
+    $sql .= "WHERE id='" . db_escape($db,$salamander['id']) . "' ";
     $sql .= "LIMIT 1";
   
     $result = mysqli_query($db, $sql);
@@ -57,9 +57,9 @@ function insert_salamander($salamander) {
   $sql = "INSERT INTO salamander ";
   $sql .= "(name, habitat, description) ";
   $sql .= "VALUES(";
-  $sql .= "'" . $salamander['name'] . "', ";
-  $sql .= "'" . $salamander['habitat'] . "', ";
-  $sql .= "'" . $salamander['description'] . "'";
+  $sql .= "'" . db_escape($db,$salamander['name']) . "', ";
+  $sql .= "'" . db_escape($db,$salamander['habitat']) . "', ";
+  $sql .= "'" . db_escape($db,$salamander['description']) . "'";
   $sql .= ")";
   $result = mysqli_query($db, $sql);
 
@@ -96,7 +96,7 @@ function validate_salamander($salamander) {
 function delete_salamander($id) {
     global $db;
     $sql = "DELETE FROM salamander ";
-    $sql .= "WHERE id = '" . $id . "' ";
+    $sql .= "WHERE id = '" . db_escape($db,$id) . "' ";
     $sql .= "LIMIT 1";
 
     $result = mysqli_query($db, $sql);
